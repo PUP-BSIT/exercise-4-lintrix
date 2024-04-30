@@ -26,4 +26,56 @@ export class ParentComponent {
       year_released: 2016,
     },
   ];
+
+  selectedKdramaIndex: number;
+  isEditing: boolean = false;
+
+  // Functions for adding, updating, and deleting Kdramas
+  addKdrama() {
+    const newKdrama: Kdrama = {
+      title: this.title,
+      lead_actor: this.lead_actor,
+      lead_actress: this.lead_actress,
+      year_released: this.year_released,
+    };
+    this.kdrama_library.push(newKdrama);
+    this.clearInputs(); // Call clearInputs after adding a kdrama
+  }
+  
+  deleteKdrama(index: number) {
+    if (index >= 0 && index < this.kdrama_library.length) {
+      this.kdrama_library.splice(index, 1);
+    }
+  }
+  
+  updateKdrama(index: number) {
+    if (index >= 0 && index < this.kdrama_library.length) {
+      this.title = this.kdrama_library[index].title;
+      this.lead_actor = this.kdrama_library[index].lead_actor;
+      this.lead_actress = this.kdrama_library[index].lead_actress;
+      this.year_released = this.kdrama_library[index].year_released;
+      this.selectedKdramaIndex = index;
+      this.isEditing = true;
+    }
+  }
+
+  confirmUpdate() {
+    if (this.selectedKdramaIndex !== undefined) {
+      this.kdrama_library[this.selectedKdramaIndex] = {
+        title: this.title,
+        lead_actor: this.lead_actor,
+        lead_actress: this.lead_actress,
+        year_released: this.year_released,
+      };
+      this.isEditing = false;
+      this.clearInputs(); // Call clearInputs after confirming update
+    }
+  }
+
+  clearInputs() {
+    this.title = '';
+    this.lead_actor = '';
+    this.lead_actress = '';
+    this.year_released = null;
+  }  
 }
