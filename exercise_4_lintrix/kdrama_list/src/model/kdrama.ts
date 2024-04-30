@@ -1,4 +1,4 @@
-export interface Kdrama {
+export type Kdrama = {
     title: string;
     lead_actor: string;
     lead_actress: string;
