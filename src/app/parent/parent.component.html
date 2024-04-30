@@ -2,15 +2,19 @@
     <h2>Kdrama Library</h2>
     <input type="text" placeholder="Title" [(ngModel)]="title" />
     <input type="text" placeholder="Lead Actor" [(ngModel)]="lead_actor" />
-    <input type="text" placeholder="Lead Actress" [(ngModel)]="lead_actress" />
-    <input type="number" placeholder="Year Released" [(ngModel)]="year_released" />
+    <input type="text" placeholder="Lead Actress" 
+      [(ngModel)]="lead_actress" />
+    <input type="number" placeholder="Year Released" 
+      [(ngModel)]="year_released" />
     <div class="button-container">
-      <button type="button" class="add-btn" (click)="addKdrama()">Add Kdrama</button>
+      <button type="button" class="add-btn" 
+        (click)="addKdrama()">Add Kdrama</button>
     </div>
   </div>
   
   <div class="kdrama-container">
-    <div class="kdrama-item" *ngFor="let kdrama of kdrama_library; let i = index">
+    <div class="kdrama-item" 
+      *ngFor="let kdrama of kdrama_library; let i = index">
       <div>
         <p>Title: {{ kdrama.title }}</p>
         <p>Lead Actor: {{ kdrama.lead_actor }}</p>
@@ -18,15 +22,18 @@
         <p>Year Released: {{ kdrama.year_released }}</p>
       </div>
       <div class="button-container">
-        <button type="button" class="edit-btn" (click)="updateKdrama(i)">Edit</button>
-        <button type="button" class="delete-btn" (click)="deleteKdrama(i)">Delete</button>
+        <button type="button" class="edit-btn" 
+          (click)="updateKdrama(i)">Edit</button>
+        <button type="button" class="delete-btn" 
+          (click)="deleteKdrama(i)">Delete</button>
       </div>
     </div>
   </div>
   
   <div *ngIf="isEditing" class="form-container">
     <div class="button-container">
-      <button type="button" class="update-btn" (click)="confirmUpdate()">Ok</button>
+      <button type="button" class="update-btn" 
+        (click)="confirmUpdate()">Ok</button>
     </div>
   </div>
   
