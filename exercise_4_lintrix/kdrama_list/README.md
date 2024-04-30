@@ -1,7 +1,7 @@
-# KdramaList
+#KdramaList
 <h1>ANGULAR EXERCISE 4: </h1>
 
-Visit: that Allows users to 
+Visit:  that Allows users to 
 create, read, update, and delete KDrama entries.
 Each entry contains a title and corresponding 
 information about the drama.
