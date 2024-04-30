@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Kdrama } from '../../../model/kdrama'; // Import the Kdrama type
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
-  styleUrl: './child.component.css'
+  styleUrls: ['./child.component.css'],
 })
 export class ChildComponent {
-
+  @Input() kdrama: Kdrama; // Input property of type Kdrama
 }
