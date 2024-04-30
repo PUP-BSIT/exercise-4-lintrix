@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Kdrama } from '../../model/kdrama'; // Import the Kdrama type
+import { Kdrama } from '../../model/kdrama';
 
 @Component({
   selector: 'app-parent',
@@ -30,7 +30,6 @@ export class ParentComponent {
   selectedKdramaIndex: number;
   isEditing: boolean = false;
 
-  // Functions for adding, updating, and deleting Kdramas
   addKdrama() {
     const newKdrama: Kdrama = {
       title: this.title,
@@ -39,7 +38,7 @@ export class ParentComponent {
       year_released: this.year_released,
     };
     this.kdrama_library.push(newKdrama);
-    this.clearInputs(); // Call clearInputs after adding a kdrama
+    this.clearInputs();
   }
   
   deleteKdrama(index: number) {
@@ -68,7 +67,7 @@ export class ParentComponent {
         year_released: this.year_released,
       };
       this.isEditing = false;
-      this.clearInputs(); // Call clearInputs after confirming update
+      this.clearInputs();
     }
   }
 
