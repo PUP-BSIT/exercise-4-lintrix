@@ -1,4 +1,11 @@
 # KdramaList
+<h1>ANGULAR EXERCISE 4: </h1>
+
+Visit: that Allows users to 
+create, read, update, and delete KDrama entries.
+Each entry contains a title and corresponding 
+information about the drama.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
